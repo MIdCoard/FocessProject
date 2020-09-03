@@ -1,0 +1,17 @@
+***************
+*** 44,50 ****
+        }
+  
+        public List<T> apply(@Nullable Object[] p_apply_1_) {
+-          return Arrays.<T>asList(p_apply_1_);
+        }
+     }
+  
+--- 44,50 ----
+        }
+  
+        public List<T> apply(@Nullable Object[] p_apply_1_) {
++          return Arrays.<T>asList((T[])p_apply_1_);
+        }
+     }
+  

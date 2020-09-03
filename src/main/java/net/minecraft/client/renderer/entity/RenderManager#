@@ -1,0 +1,17 @@
+***************
+*** 245,251 ****
+        if (p_78713_1_ instanceof AbstractClientPlayer) {
+           String s = ((AbstractClientPlayer)p_78713_1_).func_175154_l();
+           RenderPlayer renderplayer = this.field_178636_l.get(s);
+-          return renderplayer != null ? renderplayer : this.field_178637_m;
+        } else {
+           return this.<T>func_78715_a(p_78713_1_.getClass());
+        }
+--- 245,251 ----
+        if (p_78713_1_ instanceof AbstractClientPlayer) {
+           String s = ((AbstractClientPlayer)p_78713_1_).func_175154_l();
+           RenderPlayer renderplayer = this.field_178636_l.get(s);
++          return (Render<T>)(renderplayer != null ? renderplayer : this.field_178637_m);
+        } else {
+           return this.<T>func_78715_a(p_78713_1_.getClass());
+        }
