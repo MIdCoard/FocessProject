@@ -1,0 +1,103 @@
+---- Minecraft Crash Report ----
+// Don't be sad, have a hug! <3
+
+Time: 2019-08-03 15:52
+Description: Ticking entity
+
+java.lang.NullPointerException: Ticking entity
+	at com.focess.plugins.TestPlugin$4.execute(TestPlugin.java:243)
+	at com.focess.plugins.TestPlugin$4.execute(TestPlugin.java:1)
+	at net.minecraft.network.NetworkManager.dispatchPacket(NetworkManager.java:204)
+	at net.minecraft.network.NetworkManager.sendPacket(NetworkManager.java:162)
+	at net.minecraft.client.network.NetHandlerPlayClient.sendPacket(NetHandlerPlayClient.java:896)
+	at net.minecraft.client.entity.EntityPlayerSP.onUpdateWalkingPlayer(EntityPlayerSP.java:314)
+	at net.minecraft.client.entity.EntityPlayerSP.onUpdate(EntityPlayerSP.java:249)
+	at net.minecraft.world.World.updateEntityWithOptionalForce(World.java:1987)
+	at net.minecraft.world.World.updateEntity(World.java:1951)
+	at net.minecraft.world.World.updateEntities(World.java:1794)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:2367)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:2175)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:2121)
+	at net.minecraft.client.main.Main.main(Main.java:133)
+	at com.focess.Main.main(Main.java:7)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at com.focess.plugins.TestPlugin$4.execute(TestPlugin.java:243)
+	at com.focess.plugins.TestPlugin$4.execute(TestPlugin.java:1)
+	at net.minecraft.network.NetworkManager.dispatchPacket(NetworkManager.java:204)
+	at net.minecraft.network.NetworkManager.sendPacket(NetworkManager.java:162)
+	at net.minecraft.client.network.NetHandlerPlayClient.sendPacket(NetHandlerPlayClient.java:896)
+	at net.minecraft.client.entity.EntityPlayerSP.onUpdateWalkingPlayer(EntityPlayerSP.java:314)
+	at net.minecraft.client.entity.EntityPlayerSP.onUpdate(EntityPlayerSP.java:249)
+	at net.minecraft.world.World.updateEntityWithOptionalForce(World.java:1987)
+	at net.minecraft.world.World.updateEntity(World.java:1951)
+
+-- Entity being ticked --
+Details:
+	Entity Type: null (net.minecraft.client.entity.EntityPlayerSP)
+	Entity ID: 266
+	Entity Name: MidCoard
+	Entity's Exact location: -67.29, 64.00, -5.76
+	Entity's Block location: World: (-68,64,-6), Chunk: (at 12,4,10 in -5,-1; contains blocks -80,0,-16 to -65,255,-1), Region: (-1,-1; contains chunks -32,-32 to -1,-1, blocks -512,0,-512 to -1,255,-1)
+	Entity's Momentum: 0.00, -0.08, 0.00
+	Entity's Passengers: []
+	Entity's Vehicle: ~~ERROR~~ NullPointerException: null
+Stacktrace:
+	at net.minecraft.world.World.updateEntities(World.java:1794)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityPlayerSP['MidCoard'/266, l='MpServer', x=-67.29, y=64.00, z=-5.76]]
+	Chunk stats: MultiplayerChunkCache: 441, 441
+	Level seed: 0
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (-68,64,4), Chunk: (at 12,4,4 in -5,0; contains blocks -80,0,0 to -65,255,15), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Level time: 7856198 game time, 7856198 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: adventure (ID 2). Hardcore: false. Cheats: false
+	Forced entities: 16 total; [EntityPlayerSP['MidCoard'/266, l='MpServer', x=-67.29, y=64.00, z=-5.76], EntityCreeper['Creeper'/289, l='MpServer', x=-77.50, y=17.00, z=1.50], EntitySquid['Squid'/290, l='MpServer', x=-51.31, y=55.12, z=22.92], EntityCreeper['Creeper'/101, l='MpServer', x=-114.50, y=30.00, z=7.50], EntitySkeleton['Skeleton'/42, l='MpServer', x=-86.50, y=14.00, z=-38.50], EntityCreeper['Creeper'/203, l='MpServer', x=-105.50, y=25.00, z=-6.50], EntityEnderman['Enderman'/43, l='MpServer', x=-85.50, y=14.00, z=-45.50], EntityZombie['Zombie'/206, l='MpServer', x=-86.50, y=15.00, z=-44.50], EntityZombie['Zombie'/245, l='MpServer', x=-89.50, y=22.00, z=2.50], EntityZombie['Zombie'/277, l='MpServer', x=-82.50, y=15.00, z=-12.50], EntityWitch['Witch'/246, l='MpServer', x=-76.50, y=11.00, z=-15.50], EntitySkeleton['Skeleton'/23, l='MpServer', x=-112.50, y=29.00, z=5.50], EntityZombie['Zombie'/283, l='MpServer', x=-67.50, y=14.00, z=22.50], EntitySquid['Squid'/220, l='MpServer', x=-69.45, y=61.72, z=42.59], EntitySkeleton['Skeleton'/285, l='MpServer', x=-78.50, y=11.00, z=-19.50], EntitySpider['Spider'/286, l='MpServer', x=-72.50, y=11.00, z=-18.50]]
+	Retry entities: 0 total; []
+	Server brand: Spigot
+	Server type: Non-integrated multiplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:448)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:577)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:2132)
+	at net.minecraft.client.main.Main.main(Main.java:133)
+	at com.focess.Main.main(Main.java:7)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 12.0.1, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode, sharing), Oracle Corporation
+	Memory: 149132328 bytes (142 MB) / 381681664 bytes (364 MB) up to 4273995776 bytes (4076 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 0, allocated: 13, tallocated: 95
+	Launched Version: 1.12.2
+	LWJGL: 2.9.3
+	OpenGL: GeForce 940M/PCIe/SSE2 GL version 4.6.0 NVIDIA 430.64, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: Yes
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: ~~ERROR~~ NullPointerException: null
+	Profiler Position: N/A (disabled)
+	CPU: 1x Intel(R) Core(TM) i7-6500U CPU @ 2.50GHz

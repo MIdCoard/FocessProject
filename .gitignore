@@ -1,0 +1,8 @@
+# Project exclude paths
+/target/
+/.idea/
+/debug/
+/crash-reports/
+/resourcepacks/
+/saves/
+/screenshots/
